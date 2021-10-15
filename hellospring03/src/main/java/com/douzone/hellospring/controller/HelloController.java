@@ -10,4 +10,10 @@ public class HelloController {
 	public String hello() {
 		return "/WEB-INF/views/hello.jsp";
 	}
+	
+	@RequestMapping("/hello2")
+	public String hello2(String name) {
+		System.out.println(name);
+		return "/WEB-INF/views/hello2.jsp";
+	}
 }
