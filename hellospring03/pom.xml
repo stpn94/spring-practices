@@ -15,6 +15,7 @@
 	</properties>
 	<dependencies>
 	
+		<!-- DispatcherServlet -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
