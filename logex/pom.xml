@@ -7,11 +7,13 @@
 		<artifactId>spring-practices</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>hellospring03</artifactId>
+	<artifactId>logex</artifactId>
 	<packaging>war</packaging>
-	
+
 	<properties>
 		<org.springframework-version>4.3.4.RELEASE</org.springframework-version>
+		<jcloverslf4j.version>1.7.6</jcloverslf4j.version>
+		<logback.version>1.1.1</logback.version>		
 	</properties>
 
 	<dependencies>
@@ -20,6 +22,13 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 			<version>${org.springframework-version}</version>
+			<!-- JCL 제외 -->
+			<exclusions>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>			
 		</dependency>
 
 		<!-- Spring MVC -->
@@ -42,6 +51,18 @@
 		    <artifactId>jstl</artifactId>
 		    <version>1.2</version>
 		</dependency>
+
+		<!-- logback(slf4j) -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>${jcloverslf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${logback.version}</version>
+		</dependency>		
 				
 		<!-- Servlet -->
 		<dependency>
@@ -59,7 +80,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>hellospring03</finalName>
+		<finalName>logex</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -76,7 +97,7 @@
 				<version>1.1</version>
 				<configuration>
 					<url>http://127.0.0.1:8088/manager/text</url>
-					<path>/hellsping03</path>
+					<path>/logex</path>
 					<username>admin</username>
 					<password>manager</password>
 				</configuration>

@@ -1,0 +1,15 @@
+
+1. maven project 생성 (war)
+2. web.xml 추가 (JAVA EE Tools Generate Deployment Descriptor Stub)
+3. target runtime (tomcat lib 추가)(properties > target runtime)
+4. pom.xml 설정
+5. web.xml 설정 dispacher servlet 리스너
+	1) /WEB-INF/applicationContext.xml (Root Appliaction Context)
+	2) /WEB-INF/spring-servlet.xml	   (Web Application Context)
+6. package
+	- com.douzone.(proj).controller
+	- com.douzone.(proj).service
+	- com.douzone.(proj).repository
+	- com.douzone.(proj).vo
+7. views/*.jsp 파일
+8. controller, service , repository 작업
