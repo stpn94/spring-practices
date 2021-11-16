@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,11 +34,18 @@ public class EmaillistController {
 	}
 	
 	@RequestMapping(value ="/add"  , method = RequestMethod.POST )
-	public String add(HttpServletRequest request ,EmaillistVo vo)  {
-
+	public ResponseEntity<String> add(HttpServletRequest request ,EmaillistVo vo)  {
+		String categoryName ="ca";
+		String categoryNameCheck= "ca";
+		
+		if(categoryName == categoryNameCheck ) {
+			return ResponseEntity.ok("<script>alert('경고');</script>");
+		}
 
 	    emaillistRepository.insert(vo);
-		return "redirect:/";
+	    
+		return ResponseEntity.ok("<script>alert('경고');</script>");
+		
 	}
 	
 	
